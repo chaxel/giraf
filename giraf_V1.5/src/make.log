@@ -1,0 +1,15 @@
+rm params.o getdimensions.o raffinement_maillage.o check.o  wcal2d.o tools.o alloc.o fonctions.o chimie.o physique.o io_netcdf.o io_ascii.o *.mod *.exe 
+gfortran -ffree-form -ffree-line-length-none -fbounds-check -o params.o -c -O2 -I/opt/netcdf-4.0.1-gfortran-64/include -O2 -m64 params.f90
+gfortran -ffree-form -ffree-line-length-none -fbounds-check -c -O2 -I/opt/netcdf-4.0.1-gfortran-64/include -O2 -m64 params.f90	
+gfortran -ffree-form -ffree-line-length-none -fbounds-check -c -O2 -I/opt/netcdf-4.0.1-gfortran-64/include -O2 -m64 getdimensions.f90
+gfortran -ffree-form -ffree-line-length-none -fbounds-check -c -O2 -I/opt/netcdf-4.0.1-gfortran-64/include -O2 -m64 raffinement_maillage.f90
+gfortran -ffree-form -ffree-line-length-none -fbounds-check -c -O2 -I/opt/netcdf-4.0.1-gfortran-64/include -O2 -m64 check.f90
+gfortran -ffree-form -ffree-line-length-none -fbounds-check -c -O2 -I/opt/netcdf-4.0.1-gfortran-64/include -O2 -m64 wcal2d.f90
+gfortran -ffree-form -ffree-line-length-none -fbounds-check -c -O2 -I/opt/netcdf-4.0.1-gfortran-64/include -O2 -m64 tools.f90
+gfortran -ffree-form -ffree-line-length-none -fbounds-check -c -O2 -I/opt/netcdf-4.0.1-gfortran-64/include -O2 -m64 alloc.f90
+gfortran -ffree-form -ffree-line-length-none -fbounds-check -c -O2 -I/opt/netcdf-4.0.1-gfortran-64/include -O2 -m64 fonctions.f90
+gfortran -ffree-form -ffree-line-length-none -fbounds-check -c -O2 -I/opt/netcdf-4.0.1-gfortran-64/include -O2 -m64 chimie.f90
+gfortran -ffree-form -ffree-line-length-none -fbounds-check -c -O2 -I/opt/netcdf-4.0.1-gfortran-64/include -O2 -m64 physique.f90
+gfortran -ffree-form -ffree-line-length-none -fbounds-check -c -O2 -I/opt/netcdf-4.0.1-gfortran-64/include -O2 -m64 io_netcdf.f90
+gfortran -ffree-form -ffree-line-length-none -fbounds-check -c -O2 -I/opt/netcdf-4.0.1-gfortran-64/include -O2 -m64 io_ascii.f90
+(gfortran -ffree-form -ffree-line-length-none -fbounds-check -o raffinement.exe params.o getdimensions.o raffinement_maillage.o check.o  wcal2d.o tools.o alloc.o fonctions.o chimie.o physique.o io_netcdf.o io_ascii.o -O2 -I/opt/netcdf-4.0.1-gfortran-64/include -O2 -m64  -L/opt/netcdf-4.0.1-gfortran-64/lib -L/appli/PREVALP_200611/utils/projection -lnetcdf -lproj )

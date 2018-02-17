@@ -1,0 +1,32 @@
+rm params.o getdimensions.o giraf.o check.o  wcal2d.o tools.o alloc.o fonctions.o chimie.o physique.o io_netcdf.o io_ascii.o io.o *.mod *.exe 
+rm: cannot remove `params.o': No such file or directory
+rm: cannot remove `getdimensions.o': No such file or directory
+rm: cannot remove `giraf.o': No such file or directory
+rm: cannot remove `check.o': No such file or directory
+rm: cannot remove `wcal2d.o': No such file or directory
+rm: cannot remove `tools.o': No such file or directory
+rm: cannot remove `alloc.o': No such file or directory
+rm: cannot remove `fonctions.o': No such file or directory
+rm: cannot remove `chimie.o': No such file or directory
+rm: cannot remove `physique.o': No such file or directory
+rm: cannot remove `io_netcdf.o': No such file or directory
+rm: cannot remove `io_ascii.o': No such file or directory
+rm: cannot remove `io.o': No such file or directory
+rm: cannot remove `*.mod': No such file or directory
+rm: cannot remove `*.exe': No such file or directory
+make: [clean] Error 1 (ignored)
+ifort -o params.o -c -O2 -I/opt/netcdf-4.0.1-ifort-gcc/include -O2 -xW -fno-alias -prec_div -ip params.f90
+ifort -c -O2 -I/opt/netcdf-4.0.1-ifort-gcc/include -O2 -xW -fno-alias -prec_div -ip params.f90	
+ifort -c -O2 -I/opt/netcdf-4.0.1-ifort-gcc/include -O2 -xW -fno-alias -prec_div -ip getdimensions.f90
+ifort -c -O2 -I/opt/netcdf-4.0.1-ifort-gcc/include -O2 -xW -fno-alias -prec_div -ip giraf.f90
+ifort -c -O2 -I/opt/netcdf-4.0.1-ifort-gcc/include -O2 -xW -fno-alias -prec_div -ip check.f90
+ifort -c -O2 -I/opt/netcdf-4.0.1-ifort-gcc/include -O2 -xW -fno-alias -prec_div -ip wcal2d.f90
+ifort -c -O2 -I/opt/netcdf-4.0.1-ifort-gcc/include -O2 -xW -fno-alias -prec_div -ip tools.f90
+ifort -c -O2 -I/opt/netcdf-4.0.1-ifort-gcc/include -O2 -xW -fno-alias -prec_div -ip alloc.f90
+ifort -c -O2 -I/opt/netcdf-4.0.1-ifort-gcc/include -O2 -xW -fno-alias -prec_div -ip fonctions.f90
+ifort -c -O2 -I/opt/netcdf-4.0.1-ifort-gcc/include -O2 -xW -fno-alias -prec_div -ip chimie.f90
+ifort -c -O2 -I/opt/netcdf-4.0.1-ifort-gcc/include -O2 -xW -fno-alias -prec_div -ip physique.f90
+ifort -c -O2 -I/opt/netcdf-4.0.1-ifort-gcc/include -O2 -xW -fno-alias -prec_div -ip io_netcdf.f90
+ifort -c -O2 -I/opt/netcdf-4.0.1-ifort-gcc/include -O2 -xW -fno-alias -prec_div -ip io_ascii.f90
+ifort -c -O2 -I/opt/netcdf-4.0.1-ifort-gcc/include -O2 -xW -fno-alias -prec_div -ip io.f90
+(ifort -o giraf.exe params.o getdimensions.o giraf.o check.o  wcal2d.o tools.o alloc.o fonctions.o chimie.o physique.o io_netcdf.o io_ascii.o io.o -O2 -I/opt/netcdf-4.0.1-ifort-gcc/include -O2 -xW -fno-alias -prec_div -ip  -L/opt/netcdf-4.0.1-ifort-gcc/lib -L/mnt/mod3/appli/PREVALP_OP/utils/projection_ifort -lnetcdf -lproj )

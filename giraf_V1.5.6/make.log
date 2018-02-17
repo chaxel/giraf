@@ -1,0 +1,16 @@
+rm params.o getdimensions.o giraf.o check.o  wcal2d_proj.o tools.o alloc.o fonctions.o chimie.o physique.o io_netcdf.o io_ascii.o io.o *.mod *.exe 
+ifort -o params.o -c -O2 -I/opt/netcdf-4.0.1-ifort-gcc/include -O2 params.f90
+ifort -c -O2 -I/opt/netcdf-4.0.1-ifort-gcc/include -O2 params.f90	
+ifort -c -O2 -I/opt/netcdf-4.0.1-ifort-gcc/include -O2 getdimensions.f90
+ifort -c -O2 -I/opt/netcdf-4.0.1-ifort-gcc/include -O2 giraf.f90
+ifort -c -O2 -I/opt/netcdf-4.0.1-ifort-gcc/include -O2 check.f90
+ifort -c -O2 -I/opt/netcdf-4.0.1-ifort-gcc/include -O2 wcal2d_proj.f90
+ifort -c -O2 -I/opt/netcdf-4.0.1-ifort-gcc/include -O2 tools.f90
+ifort -c -O2 -I/opt/netcdf-4.0.1-ifort-gcc/include -O2 alloc.f90
+ifort -c -O2 -I/opt/netcdf-4.0.1-ifort-gcc/include -O2 fonctions.f90
+ifort -c -O2 -I/opt/netcdf-4.0.1-ifort-gcc/include -O2 chimie.f90
+ifort -c -O2 -I/opt/netcdf-4.0.1-ifort-gcc/include -O2 physique.f90
+ifort -c -O2 -I/opt/netcdf-4.0.1-ifort-gcc/include -O2 io_netcdf.f90
+ifort -c -O2 -I/opt/netcdf-4.0.1-ifort-gcc/include -O2 io_ascii.f90
+ifort -c -O2 -I/opt/netcdf-4.0.1-ifort-gcc/include -O2 io.f90
+(ifort -o giraf.exe params.o getdimensions.o giraf.o check.o  wcal2d_proj.o tools.o alloc.o fonctions.o chimie.o physique.o io_netcdf.o io_ascii.o io.o -O2 -I/opt/netcdf-4.0.1-ifort-gcc/include -O2  -L/opt/netcdf-4.0.1-ifort-gcc/lib -L/mnt/mod3/appli/PREVALP_OP/utils/projection_ifort -lnetcdf -lproj)

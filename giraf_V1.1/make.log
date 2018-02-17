@@ -1,0 +1,32 @@
+rm params.o getdimensions.o giraf.o check.o  wcal2d.o tools.o alloc.o fonctions.o chimie.o physique.o io_netcdf.o io_ascii.o io.o *.mod *.exe 
+rm: cannot remove `params.o': No such file or directory
+rm: cannot remove `getdimensions.o': No such file or directory
+rm: cannot remove `giraf.o': No such file or directory
+rm: cannot remove `check.o': No such file or directory
+rm: cannot remove `wcal2d.o': No such file or directory
+rm: cannot remove `tools.o': No such file or directory
+rm: cannot remove `alloc.o': No such file or directory
+rm: cannot remove `fonctions.o': No such file or directory
+rm: cannot remove `chimie.o': No such file or directory
+rm: cannot remove `physique.o': No such file or directory
+rm: cannot remove `io_netcdf.o': No such file or directory
+rm: cannot remove `io_ascii.o': No such file or directory
+rm: cannot remove `io.o': No such file or directory
+rm: cannot remove `*.mod': No such file or directory
+rm: cannot remove `*.exe': No such file or directory
+make: [clean] Error 1 (ignored)
+gfortran -ffree-form -ffree-line-length-none -fbounds-check -o params.o -c -O2 -I/opt/netcdf-4.0.1-gfortran-64/include -O2 params.f90
+gfortran -ffree-form -ffree-line-length-none -fbounds-check -c -O2 -I/opt/netcdf-4.0.1-gfortran-64/include -O2 params.f90	
+gfortran -ffree-form -ffree-line-length-none -fbounds-check -c -O2 -I/opt/netcdf-4.0.1-gfortran-64/include -O2 getdimensions.f90
+gfortran -ffree-form -ffree-line-length-none -fbounds-check -c -O2 -I/opt/netcdf-4.0.1-gfortran-64/include -O2 giraf.f90
+gfortran -ffree-form -ffree-line-length-none -fbounds-check -c -O2 -I/opt/netcdf-4.0.1-gfortran-64/include -O2 check.f90
+gfortran -ffree-form -ffree-line-length-none -fbounds-check -c -O2 -I/opt/netcdf-4.0.1-gfortran-64/include -O2 wcal2d.f90
+gfortran -ffree-form -ffree-line-length-none -fbounds-check -c -O2 -I/opt/netcdf-4.0.1-gfortran-64/include -O2 tools.f90
+gfortran -ffree-form -ffree-line-length-none -fbounds-check -c -O2 -I/opt/netcdf-4.0.1-gfortran-64/include -O2 alloc.f90
+gfortran -ffree-form -ffree-line-length-none -fbounds-check -c -O2 -I/opt/netcdf-4.0.1-gfortran-64/include -O2 fonctions.f90
+gfortran -ffree-form -ffree-line-length-none -fbounds-check -c -O2 -I/opt/netcdf-4.0.1-gfortran-64/include -O2 chimie.f90
+gfortran -ffree-form -ffree-line-length-none -fbounds-check -c -O2 -I/opt/netcdf-4.0.1-gfortran-64/include -O2 physique.f90
+gfortran -ffree-form -ffree-line-length-none -fbounds-check -c -O2 -I/opt/netcdf-4.0.1-gfortran-64/include -O2 io_netcdf.f90
+gfortran -ffree-form -ffree-line-length-none -fbounds-check -c -O2 -I/opt/netcdf-4.0.1-gfortran-64/include -O2 io_ascii.f90
+gfortran -ffree-form -ffree-line-length-none -fbounds-check -c -O2 -I/opt/netcdf-4.0.1-gfortran-64/include -O2 io.f90
+(gfortran -ffree-form -ffree-line-length-none -fbounds-check -o giraf.exe params.o getdimensions.o giraf.o check.o  wcal2d.o tools.o alloc.o fonctions.o chimie.o physique.o io_netcdf.o io_ascii.o io.o -O2 -I/opt/netcdf-4.0.1-gfortran-64/include -O2  -L/opt/netcdf-4.0.1-gfortran-64/lib -L/appli/PREVALP_200611/utils/projection -lnetcdf -lproj )

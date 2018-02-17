@@ -1,0 +1,67 @@
+1.5.5 :  * Ajoute les espèces SO2 et C6H6 avec raffinement altitude
+14/03/12 * Change Atmo Rhône-alpes -> Air Rhône-Alpes + dates + mail
+
+1.5.4 :  * Modifie le systeme de projection pour projet GAZEL + ajout d'un calcul projection dans wal2d_proj.f90 --> Lambert 2 étendu
+14/02/12
+
+1.5.3 :  * Corrige un bug sur l'ecriture des donnees d'emissions horaires quand celles-ci ne sont pas dispo
+17/05/11 
+
+1.5.2 :  * Corrige un bug sur les emissions horaires au format NetCDF : pas de prise en compte des émissions de PM10
+21/04/11 * Corrige un bug dans le traitement de l'ozone si du NO disparait
+
+1.5.1 :  * Corrige un bug sur les emissions annuelles au format ASCII. Fichier 4 colonnes lon,lat,NOx,PM10 OK.
+11/04/11 * Corrige BUG sur calcul raffinement NO2/NO
+
+1.5   :  * Corrige un bug sur les emissions annuelles au format ASCII. Fichier 4 colonnes lon,lat,NOx,PM10 OK.
+15/03/11
+
+1.4   :  * utilise des emissions horaires de CHIMERE (base sur prepemis_chauffage_3d) - EN DEVELOPPEMENT
+
+1.31  :  * version pour la prevision avec un facteur de 0.2 sur les emissions de la SNAP 2
+05/02/11 * ecrit les emissions annuelles utilisées pour le calcul en sortie
+
+1.3   :  * utilise les emissions 2011 avec PPM_fin et PPM_coa a la place de PM10 (OPERATIONNEL)
+03/02/11 
+
+1.21  :  * utilise toutes les emissions au sol avec un facteur 1.00 sauf la SNAP 1 (coef 0.00) dans param.f90
+13/12/10 
+
+1.2  :   * en sortie du raffinement vent, ecrit le facteur fin/coarse pour w10m
+06/10/10 * realise un lissage du relief sur 5 km avant d'appliquer le raffinememt de maillage
+
+1.1  :    * abandonne le concept d'ecart FDMS : sort uniquement PM10 et PM10_nonvolat (facultatif)
+06/10/10  * realise le raffinement de la vitesse du vent (direction inchangée)
+          * nouvel executable : giraf.exe
+
+1.06 :    * modifie le calcul de l'ecart FDMS 
+21/04/10  
+
+1.05 :    * fixe un bug lorsque les PM ne sont pas dispo
+12/04/10  * corrige de GROS bugs dans traitement chimie.f90 (mauvaise correction du NO, correction NO, NO2 et O3 erronée)
+
+REMARQUE: pour toutes versions anterieures a 1.05, il existe un bug dans le traitement des emissions NO + NO2 + O3.
+          NE PLUS UTILISER LES VERSIONS < 1.05
+
+1.04 :    * fixe un voisinage de 10 km pour tem2, PM25 et pHNO3
+12/04/10  * Complete l'aide
+          * BUG dans traitement NO/NO2 : ne plus utiliser
+	  
+1.03 :    * Ajoute temperature au traitement d'altitude variable temp
+09/04/10  * Traite aussi bien pHNO3 et pPPM que p10HNO3 et p10PPM
+          * Corrige bug dans calcul du PM10_nonvolat (dans expression de fac)
+	  * Ajoute les sorties PM10_nonvolat et PM10_ecart_fdms
+	  * Supprime les sorties tem2 et sreh
+	  * Sort tem2 et pHNO3 pour calcul de l'ecart FDMS par utilitaires stat
+	  * Utilise l'expression du nitrate d'ammonium de Bessagnet (LCSQA,2007) NH4NO3 = 118/62 * pHNO3
+
+1.02 :    * Correction affichage du nom des données region (mineur)
+02/04/10  * Ajoute PM25, corrige bug sur correct_z_var(nvar) declare 2*
+          * Renomme raffinement_maillage.f90 en raffinement.f90
+          * Corrige bug sur la somme des emissions FINE -> COARSE (nvar_emis au lieu de nvar dans raffinement.f90)
+   
+1.01 :    * Ne creer plus de variable *_KRIG en sortie
+01/03/10  * Lit une fichier d'emissions a 4 colonnes (X,Y,NOx,PM10)
+          * Version BETA diffusée aux AASQA
+
+1.00 :    Premiere version. En operationnelle

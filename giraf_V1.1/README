@@ -1,0 +1,29 @@
+	## 
+      #####	    # 
+     ########	  ###	 # 
+##  ########## #######  ### 
+###########################################################
+# PREVALP - Raffinement de maillage GIRAF
+# (c)Atmo Rhone-Alpes 2010
+# version 1.1
+# contact: echaxel@atmo-rhonealpes.org									       
+###########################################################
+# # ## ### #### ##### ####### ######## ######### ##########
+
+Requis : 
+*****************
+Un compilateur fortran 90 declare dans la variable F90 (ex: export F90=ifort). Les meilleures performances sont
+obtenues avec le compilateur GNU gfortran.
+
+Le chemin de la bibliotheque NetCDF declare dans la variable NETCDFHOME (ex: export NETCDFHOME=/opt/netcdf).
+
+Compilation : 
+*****************
+Utiliser le script install.sh
+
+Aide : 
+*****************
+Pour avoir de l'aide sur le raffinement de maillage :
+giraf.exe -h
+
+**** Bonne utilisation !
