@@ -1,3 +1,40 @@
+	## 
+      #####	    # 
+     ########	  ###	 # 
+##  ########## #######  ### 
+###########################################################
+# GIRAF Raffinement de Maillage pour le modèle CHIMERE 
+# contact: eric@meteocloud.com									       
+###########################################################
+# # ## ### #### ##### ####### ######## ######### ##########
+
+Description :
+*****************
+GIRAF est un logiciel de raffinement de maillage en sortie du modèle CHIMERE. Il a été développé pour augmenter la résolution
+du modèle CHIMERE en limitant les besoins en calcul en utilisant une topographie et des émissions de polluants fines.
+
+Requis : 
+*****************
+Un compilateur fortran 90 declare dans la variable F90 (ex: export F90=ifort). Les meilleures performances sont
+obtenues avec le compilateur GNU gfortran.
+
+Le chemin de la bibliotheque NetCDF declare dans la variable NETCDFHOME (ex: export NETCDFHOME=/opt/netcdf).
+
+Compilation : 
+*****************
+Utiliser le script install.sh
+
+Aide : 
+*****************
+Pour avoir de l'aide sur le raffinement de maillage :
+giraf.exe -h
+
+**** Bonne utilisation !
+
+###########################################################
+# versions history
+###########################################################
+
 1.5.5 :  * Ajoute les espèces SO2 et C6H6 avec raffinement altitude
 14/03/12 * Change Atmo Rhône-alpes -> Air Rhône-Alpes + dates + mail
 
