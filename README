@@ -35,7 +35,7 @@ giraf.exe -h
 # versions history
 ###########################################################
 
-2.0 (2020) : VERSION POUR OCAPOL
+2.0 (2020) : VERSION POUR OCAPOL importée de 1.5.6
 
 1.5.5 :  * Ajoute les espèces SO2 et C6H6 avec raffinement altitude
 14/03/12 * Change Atmo Rhône-alpes -> Air Rhône-Alpes + dates + mail
