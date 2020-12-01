@@ -16,9 +16,9 @@
       write(*,*) '##  ########## #######  ###              #          #'
       write(*,*) '##########################################         #' 
       write(*,*) '# GIRAF - Raffinement maillage chimie/meteo #  ####'
-      write(*,*) '# (c)Air Rhone-Alpes '//trim(annee_str)//'                ##      #'
+      write(*,*) '# (c)Eric Chaxel '//trim(annee_str)//'                ##      #'
       write(*,*) '# version '//trim(version_str)
-      write(*,*) '# contact: echaxel@air-rhonealpes.fr'                                                                                
+      write(*,*) '# contact: meteocloud.com'                                                                                
       write(*,*) '###########################################################'
       write(*,*) '# # ## ### #### ##### ####### ######## ######### ##########'
       

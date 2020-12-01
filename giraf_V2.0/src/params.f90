@@ -3,8 +3,8 @@
 
       ! PARAMETRES PROGRAMMES
       character(len=20), parameter :: exe_str='giraf.exe'
-      integer          , parameter :: annee   = 2012   
-      real             , parameter :: version = 1.56
+      integer          , parameter :: annee   = 2020  
+      real             , parameter :: version = 2.0
       integer          , parameter :: fnstrl=256
       
       ! PARAMETRES SUR CALCUL
@@ -46,8 +46,8 @@
       logical               :: ioutput_dz_var(nvar)  = (/ .true., .true., .true., .true., .true., .true.,  .true., .false.,  .true.,  .true.,	.true. /) ! ecrit la variables dans NetCDF (DEBUG mode) ?
       logical               :: ioutput_de_var(nvar)  = (/ .true., .true., .true.,.false.,.false., .true., .false., .false., .false., .false.,  .false. /) ! ecrit la variables dans NetCDF (DEBUG mode) ?
    
-      integer, parameter    :: nvar_emis  = 9     ! utilise 3 polluants NOX, PPM_fin, PPM_coa       
-      character(len=fnstrl) :: var_emis_name(nvar_emis)  = (/'NOX','PM10','NO','NO2','PM25','PPM_fin','OCAR_fin','BCAR_fin','PPM_coa'/)  ! ne pas modifier  
+      integer, parameter    :: nvar_emis  = 11     ! utilise 3 polluants NOX, PPM_fin, PPM_coa       
+      character(len=fnstrl) :: var_emis_name(nvar_emis)  = (/'NOX','PM10','NO','NO2','PM25','PPM_fin','OCAR_fin','BCAR_fin','PPM_coa','SO2','C6H6'/)  ! ocapol 2020  
       logical               :: ivar_emis(nvar_emis) ! la variable est dans le fichier d'emissions
       logical               :: iemis_1h
       integer, parameter    :: nfile_emis = 1     ! utilise 1 fichiers d entree d'emissions 
@@ -60,16 +60,18 @@
       integer, parameter    :: nvar_ppm   = 3     ! utilise 3 especes primaires PPM        
       character(len=fnstrl) :: var_ppm_name_cdf(nvar_ppm)    != (/'p10PPM','p10OCAR','p10BCAR'/)  ! ne pas modifier       
        
-      ! CORRECTIONS                                      						 
+      ! CORRECTIONS / RECALCUL                                   						 
       logical, parameter :: correct_no    = .true.
       logical, parameter :: correct_o3    = .true.
       logical, parameter :: correct_no2   = .false.
-      logical, parameter :: correct_pm10  = .true.         
+      logical, parameter :: correct_pm10  = .true.        
       
       ! INDICES DES POLLUANTS POUR LA CHIMIE
       integer :: chim_ino
       integer :: chim_ino2
       integer :: chim_io3
+      integer :: chim_iso2
+      integer :: chim_ic6h6         
       integer :: chim_ipm10
       integer :: chim_ippm
       integer :: chim_iphno3
@@ -84,7 +86,9 @@
       integer :: emis_icovnm
       integer :: emis_inox
       integer :: emis_ino
-      integer :: emis_ino2            
+      integer :: emis_ino2
+      integer :: emis_iso2
+      integer :: emis_ic6h6                      
       integer :: emis_ipm10
       integer :: emis_ipm25     
       
