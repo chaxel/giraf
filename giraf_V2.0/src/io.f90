@@ -4,19 +4,21 @@
       
       implicit none
       
-      character(len=16)  :: version_str      
+      character(len=16)  :: version_str
+      character(len=4)   :: annee_str        
 
       write(version_str,'(F10.2)') version
+      write(annee_str,'(I4)') annee      
 
       write(*,*) '        ##                              #       #'  
       write(*,*) '      #####         #                    #  ####'
       write(*,*) '     ########     ###    #                #     #'
       write(*,*) '##  ########## #######  ###              #          #'
       write(*,*) '##########################################         #' 
-      write(*,*) '# GIRAF - RAFFINEMENT DE MAILLAGE        #  ######'
-      write(*,*) '# (c)Atmo Rhone-Alpes 2010                 ##      #'
+      write(*,*) '# GIRAF - Raffinement maillage chimie/meteo #  ####'
+      write(*,*) '# (c)Air Rhone-Alpes '//trim(annee_str)//'                ##      #'
       write(*,*) '# version '//trim(version_str)
-      write(*,*) '# contact: echaxel@atmo-rhonealpes.org'                                                                                
+      write(*,*) '# contact: echaxel@air-rhonealpes.fr'                                                                                
       write(*,*) '###########################################################'
       write(*,*) '# # ## ### #### ##### ####### ######## ######### ##########'
       
@@ -91,6 +93,8 @@
       ihelp=.false.
       ifregion=.false.
       
+      proj='geo' !defaut: projection geographique
+      
       ! lit l'argument
       iarg = 0    
       argstr='null'	  
@@ -120,14 +124,16 @@
 	  call getarg(iarg+1,fmet1)
           imet=.true.	
         else if ( trim(adjustl(argstr)).eq. '-r' )  then
-          call getarg(iarg+1,fregion)
-          ifregion=.true.		  	
+	  call getarg(iarg+1,fregion)
+          ifregion=.true.
+        else if ( trim(adjustl(argstr)).eq. '-proj' )  then
+	  call getarg(iarg+1,proj)	  		  	
         else if ( trim(adjustl(argstr)).eq. '-debug'.or.trim(adjustl(argstr)).eq. '-d' )  then
           idebug=.true.		
         else if ( trim(adjustl(argstr)).eq. '-h'.or.trim(adjustl(argstr)).eq. '--help'.or.trim(adjustl(argstr)).eq. '-help' )  then
           ihelp=.true.		
-        endif
-
+	endif	
+		
       end do
       
       if (ihelp) then
@@ -137,8 +143,8 @@
       
       if ( iarg.eq.1) then
         write(*,*) 'warning : Ne trouve pas d argument'
-        write(*,*) 'POUR AVOIR DE L AIDE: '//trim(exe_str)//' -h'
-        stop
+	write(*,*) 'POUR AVOIR DE L AIDE: '//trim(exe_str)//' -h'
+	stop
       end if
             
       ! noms par defaut
@@ -150,7 +156,7 @@
       if (.not.iemis2  )femis2(1)= 'emissions_an_2.nc' !defaut         
       if (.not.imet    )fmet1    = 'meteo.nc' !defaut
       if (.not.ifregion)fregion  = 'MAILLES_CADASTRE_CADASTRE' !defaut      
-
+      	              
       ! topo au format netCDF ?      
       inc_topo=.false.  
       if ( index(fground2,'.nc')+index(fground2,'.cdf').ne. 0 ) then 
@@ -176,9 +182,13 @@
       if (iground2)write(*,*) 'sol domaine FIN (fground2)      :'//trim(adjustl(fground2))
       if (iemis2  )write(*,*) 'emissions an.domaine FIN(femis2):'//trim(adjustl(femis2(1)))
       
+                   write(*,*) 'projection proj='//trim(adjustl(proj))
+          
       if (ifregion)write(*,*) 'donnees population Rhone-Alpes  :'//trim(adjustl(fregion)) 
       
-      if (imet    )write(*,*) 'meteo horaire CHIMERE (fmet1)   :'//trim(adjustl(fmet1))            
+      if (imet    )write(*,*) 'meteo horaire CHIMERE (fmet1)   :'//trim(adjustl(fmet1))    
+      
+      if (imet    )write(*,*) 'meteo horaire CHIMERE (fmet1)   :'//trim(adjustl(fmet1))                 
       
       write(*,*) '*****************************************************************************************************'
 

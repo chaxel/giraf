@@ -10,7 +10,7 @@ OBJS=	params.o getdimensions.o giraf.o check.o  wcal2d.o tools.o alloc.o fonctio
 
 FC=$(F90)
 
-LIBS=-L$(NETCDFHOME)/lib -L$(PROJECTIONLIB) -lnetcdf -lproj 
+LIBS=-L$(NETCDFHOME)/lib -lnetcdf -lnetcdff -L$(PROJECTIONLIB) -lproj 
 
 FCFLAGS=-O2 -I$(NETCDFHOME)/include $(FCOPT)
 
